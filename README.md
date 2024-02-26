@@ -28,7 +28,7 @@ dotnet add package HotChocolate.AspNetCore.Playground
 
 ## 3. Project Structure Overview
 
-Your project folder should look something like this:
+We have to create the following folders and files in our project structure:
 
 ```css
 GraphQLDemo/
