@@ -144,6 +144,108 @@ namespace GraphQLDemo.Models
 
 ## 5. Create the Services
 
+### 5.1. Create the AuthorService interface
+
+
+```csharp
+using GraphQLDemo.Models;
+
+namespace GraphQLDemo.Services
+{
+    public interface IAuthorService
+    {
+        Author GetAuthorById(int id);
+        List<Author> GetAllAuthors();
+    }
+}
+```
+
+### 5.2. Create the AuthorService
+
+
+```csharp
+using GraphQLDemo.Models;
+
+namespace GraphQLDemo.Services
+{
+    public class AuthorService : IAuthorService
+    {
+        public Author GetAuthorById(int id)
+        {
+            return DataStore.Authors.First(a => a.Id == id);
+        }
+
+        public List<Author> GetAllAuthors()
+        {
+            return DataStore.Authors;
+        }
+    }
+}
+```
+
+### 5.3. Create the PostService interfaces
+
+
+
+```csharp
+using GraphQLDemo.Models;
+
+namespace GraphQLDemo.Services
+{
+    public interface IPostService
+    {
+        Post GetPostById(int id);
+        List<Post> GetAllPosts();
+        Post AddPost(Post post);
+    }
+}
+```
+
+### 5.4. Create the PostService
+
+
+```csharp
+using GraphQLDemo.Models;
+
+namespace GraphQLDemo.Services
+{
+    public class PostService : IPostService
+    {
+        public Post GetPostById(int id)
+        {
+            return DataStore.Posts.First(p => p.Id == id);
+        }
+
+        public List<Post> GetAllPosts()
+        {
+            return DataStore.Posts;
+        }
+
+        public Post AddPost(Post post)
+        {
+            post.Id = DataStore.Posts.Any() ? DataStore.Posts.Max(p => p.Id) + 1 : 1;
+            DataStore.Posts.Add(post);
+
+            var author = DataStore.Authors.FirstOrDefault(a => a.Id == post.AuthorId);
+            if (author != null)
+            {
+                if (author.Posts == null)
+                {
+                    author.Posts = new List<Post>();
+                }
+                author.Posts.Add(post);
+                post.Author = author; // Ensure this line is present to correctly associate the post with its author
+            }
+            else
+            {
+                throw new Exception($"Author with ID {post.AuthorId} not found.");
+            }
+
+            return post;
+        }
+    }
+}
+```
 
 
 
