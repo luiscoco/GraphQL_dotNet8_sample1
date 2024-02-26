@@ -84,6 +84,14 @@ See the project structure in VSCode
 
 ## 4. Create the Models and DataStore
 
+**Models and DataStore**
+
+**Author Model**: Represents an author with an ID, name, and a list of posts they've written
+
+**Post Model**: Represents a blog post with an ID, title, content, the ID of its author, and a reference back to the Author object
+
+**DataStore**: A static class that acts as an in-memory database to store authors and posts. It's initialized with two authors (Jane Austen and Charles Dickens) and two posts linked to Jane Austen
+
 ### 4.1. Create the Author model
 
 ```csharp
@@ -169,8 +177,13 @@ namespace GraphQLDemo.Models
 
 ## 5. Create the Services
 
-### 5.1. Create the AuthorService interface
+**Services**
 
+**IAuthorService & AuthorService**: Defines and implements functionality to retrieve an author by their ID and to get all authors. It interacts directly with the DataStore
+
+**IPostService & PostService**: Defines and implements functionality to retrieve a post by its ID, get all posts, and add a new post to the DataStore. When adding a post, it ensures the post is linked to an existing author
+
+### 5.1. Create the AuthorService interface
 
 ```csharp
 using GraphQLDemo.Models;
