@@ -251,6 +251,88 @@ namespace GraphQLDemo.Services
 
 ## 6. Create the Types 
 
+### 6.1. AuthorType
 
+```csharp
+using GraphQLDemo.Models;
+using HotChocolate.Types;
 
+namespace GraphQLDemo.GraphQL
+{
+    public class AuthorType : ObjectType<Author>
+    {
+        protected override void Configure(IObjectTypeDescriptor<Author> descriptor)
+        {
+            descriptor.Field(a => a.Id).Type<NonNullType<IntType>>();
+            descriptor.Field(a => a.Name).Type<NonNullType<StringType>>();
+            descriptor.Field(a => a.Posts).Type<NonNullType<ListType<NonNullType<PostType>>>>();
+        }
+    }
+}
 
+```
+
+### 6.2. PostType
+
+```csharp
+using GraphQLDemo.Models;
+using HotChocolate.Types;
+
+namespace GraphQLDemo.GraphQL
+{
+    public class PostType : ObjectType<Post>
+    {
+        protected override void Configure(IObjectTypeDescriptor<Post> descriptor)
+        {
+            descriptor.Field(p => p.Id).Type<NonNullType<IntType>>();
+            descriptor.Field(p => p.Title).Type<NonNullType<StringType>>();
+            descriptor.Field(p => p.Content).Type<NonNullType<StringType>>();
+            descriptor.Field(p => p.Author).Type<NonNullType<AuthorType>>();
+        }
+    }
+}
+```
+
+### 6.3. Query
+
+```csharp
+using GraphQLDemo.Models;
+using HotChocolate;
+using GraphQLDemo.Services;
+
+namespace GraphQLDemo.GraphQL
+{
+    public class Query
+    {
+        public Author GetAuthor([Service] IAuthorService authorService, int id) =>
+            authorService.GetAuthorById(id);
+
+        public Post GetPost([Service] IPostService postService, int id) =>
+            postService.GetPostById(id);
+    }
+}
+```
+
+### 6.4. Mutation
+
+```csharp
+using GraphQLDemo.Models;
+using HotChocolate;
+using GraphQLDemo.Services;
+
+namespace GraphQLDemo.GraphQL
+{
+    public class Mutation
+    {
+        public Post AddPost([Service] IPostService postService, CreatePostInput input) =>
+            postService.AddPost(new Post
+            {
+                Title = input.Title,
+                Content = input.Content,
+                AuthorId = input.AuthorId
+            });
+    }
+
+    public record CreatePostInput(string Title, string Content, int AuthorId);
+}
+```
