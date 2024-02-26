@@ -386,6 +386,14 @@ namespace GraphQLDemo.GraphQL
 
 ## 7. Configure the application middleware (program.cs)
 
+**Application Middleware Configuration**
+
+**Program.cs**: Sets up the application, including registering the AuthorService and PostService with the .NET dependency injection system
+
+It also configures the GraphQL server with Hot Chocolate, adding the defined queries, mutations, and types to the GraphQL schema
+
+Finally, it maps the GraphQL endpoint and starts the application
+
 ```csharp
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
