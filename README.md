@@ -405,6 +405,8 @@ dotnet run
 
 ![image](https://github.com/luiscoco/GraphQL_dotNet8_sample1/assets/32194879/76433b30-9c11-43a4-b06b-76550d629160)
 
+**http://localhost:5187/graphql/**
+
 ![image](https://github.com/luiscoco/GraphQL_dotNet8_sample1/assets/32194879/a6c081ba-de07-4def-9010-4a9d7b2b2483)
 
 Test the following requests
