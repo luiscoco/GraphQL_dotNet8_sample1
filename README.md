@@ -425,7 +425,27 @@ app.MapGraphQL();
 app.Run();
 ```
 
-## 8. Run and Test the application
+## 8. How the application works
+
+**Starting the Application**: When the application starts, it initializes the **DataStore** with predefined authors and posts
+
+**Making Queries and Mutations**: Users can query for authors or posts by ID and create new posts through mutations
+
+The GraphQL server processes these requests, using the services to interact with the DataStore
+
+**Data Retrieval and Modification**: Queries retrieve data without changing it, while mutations can modify the data (e.g., adding a new post)
+
+**GraphQL Schema**: The schema defines the structure of data that can be queried or mutated, including types, queries, and mutations. It acts as a contract between the server and client
+
+## 9. Run and Test the application
+
+**Testing the API**
+
+You can test the API using tools like Banana Cake Pop (integrated with Hot Chocolate), Postman (with GraphQL support), or any GraphQL client
+
+**Querying for Authors and Posts**: Checking if the API correctly returns existing authors and posts
+
+**Creating New Posts**: Using mutations to add new posts and verifying they're correctly associated with authors
 
 To run the application we open it in VSCode and execute this command
 
