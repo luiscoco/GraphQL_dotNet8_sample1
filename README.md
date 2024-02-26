@@ -26,6 +26,25 @@ dotnet add package HotChocolate.AspNetCore
 dotnet add package HotChocolate.AspNetCore.Playground
 ```
 
+This is the csproj file
+
+```
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HotChocolate.AspNetCore" Version="13.9.0" />
+    <PackageReference Include="HotChocolate.AspNetCore.Playground" Version="10.5.5" />
+  </ItemGroup>
+
+</Project>
+```
+
 ## 3. Project Structure Overview
 
 We have to create the following folders and files in our project structure:
