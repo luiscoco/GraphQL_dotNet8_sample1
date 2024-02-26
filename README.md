@@ -200,7 +200,6 @@ namespace GraphQLDemo.Services
 
 ### 5.2. Create the AuthorService
 
-
 ```csharp
 using GraphQLDemo.Models;
 
@@ -222,8 +221,6 @@ namespace GraphQLDemo.Services
 ```
 
 ### 5.3. Create the PostService interfaces
-
-
 
 ```csharp
 using GraphQLDemo.Models;
@@ -285,9 +282,21 @@ namespace GraphQLDemo.Services
 }
 ```
 
-
-
 ## 6. Create the Types 
+
+**GraphQL Types, Query, and Mutation**
+
+**AuthorType and PostType**: GraphQL object types that define how Author and Post entities are represented in your GraphQL schema
+
+These types include fields like id, name, title, and content, and they specify the relationships between authors and posts
+
+**Query**: Defines the GraphQL queries that can be made, such as fetching a specific author or post by ID
+
+It uses the services to fetch data from the DataStore
+
+**Mutation**: Defines the GraphQL mutations, specifically adding a new post
+
+It takes a CreatePostInput object containing the title, content, and authorId, creates a new Post object, and adds it to the DataStore via the PostService
 
 ### 6.1. AuthorType
 
