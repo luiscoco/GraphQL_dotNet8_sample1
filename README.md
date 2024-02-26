@@ -1,5 +1,9 @@
 # My first sample with .NET8 GraphQL API
 
+GraphQL vs REST APIs: Which One is Better for Backend API Development?:
+
+https://radixweb.com/blog/graphql-vs-rest
+
 The source code for this demo is places in this github repo: 
 
 https://www.youtube.com/playlist?list=PL4cUxeGkcC9gUxtblNUahcsg0WLxmrK_y
