@@ -54,4 +54,9 @@ GraphQLDemo/
 └── GraphQLDemo.csproj
 ```
 
+See the project structure in VSCode
+
+![image](https://github.com/luiscoco/GraphQL_dotNet8_sample1/assets/32194879/3a0a644e-7706-4600-9a74-8cf1fd35c616)
+
+
 ## 4. 
