@@ -25,3 +25,33 @@ You need to add the Hot Chocolate ASP.NET Core package to your project
 dotnet add package HotChocolate.AspNetCore
 dotnet add package HotChocolate.AspNetCore.Playground
 ```
+
+## 3. Project Structure Overview
+
+Your project folder should look something like this:
+
+```css
+GraphQLDemo/
+│
+├── Models/
+│   ├── Author.cs
+│   ├── Post.cs
+│   └── DataStore.cs
+│
+├── GraphQL/
+│   ├── AuthorType.cs
+│   ├── PostType.cs
+│   ├── Query.cs
+│   └── Mutation.cs
+│
+├── Services/
+│   ├── IAuthorService.cs
+│   ├── IPostService.cs
+│   ├── AuthorService.cs
+│   └── PostService.cs
+│
+├── Program.cs
+└── GraphQLDemo.csproj
+```
+
+## 4. 
