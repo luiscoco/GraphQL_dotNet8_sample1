@@ -116,6 +116,8 @@ namespace GraphQLDemo.Models
 
 ### 4.3. Create the DataStore
 
+
+
 ```csharp
 using GraphQLDemo.Models;
 using System.Collections.Generic;
