@@ -394,3 +394,13 @@ app.MapGraphQL();
 
 app.Run();
 ```
+
+## 8. Run and Test the application
+
+To run the application we open it in VSCode and execute this command
+
+```
+dotnet run
+```
+
+
