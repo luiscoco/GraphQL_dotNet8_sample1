@@ -4,7 +4,7 @@ See also this example: https://medium.com/@jaydeepvpatil225/graphql-introduction
 
 See also this demo: https://github.com/Jaydeep-007/graphql_demo
 
-For more info about GraphQL see (youtube video): https://www.youtube.com/watch?v=yWzKJPw_VzM&t=21s
+For more info about GraphQL see (youtube video list): https://www.youtube.com/playlist?list=PL4cUxeGkcC9gUxtblNUahcsg0WLxmrK_y
 
 GraphQL is a query language for APIs and a runtime for executing those queries by using a type system you define for your data
 
