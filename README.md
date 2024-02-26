@@ -403,4 +403,80 @@ To run the application we open it in VSCode and execute this command
 dotnet run
 ```
 
+![image](https://github.com/luiscoco/GraphQL_dotNet8_sample1/assets/32194879/76433b30-9c11-43a4-b06b-76550d629160)
+
+![image](https://github.com/luiscoco/GraphQL_dotNet8_sample1/assets/32194879/a6c081ba-de07-4def-9010-4a9d7b2b2483)
+
+Test the following requests
+
+**Query to Fetch a Single Author by ID**
+
+To retrieve Jane Austen and her posts, you can use the following GraphQL query. This assumes you have an author query set up in your GraphQL API that accepts an id as an argument
+
+This query requests the id, name, and all posts (including their id, title, and content) for the author with id 1, which corresponds to Jane Austen based on your DataStore initialization
+
+```
+query GetAuthorById {
+  author(id: 1) {
+    id
+    name
+    posts {
+      id
+      title
+      content
+    }
+  }
+}
+```
+
+![image](https://github.com/luiscoco/GraphQL_dotNet8_sample1/assets/32194879/5aeefdf7-c853-40bd-bffd-cb5e38af8a85)
+
+**Query to Fetch a Single Post by ID**
+
+To retrieve one of the initialized posts, for example, the post with id 1 titled "Exploring GraphQL", you can use the following GraphQL query
+
+This assumes you have a post query in your GraphQL API that accepts an id as an argument
+
+This query requests the id, title, content, and author information (including the author's id and name), as well as the authorId for the post with id 1
+
+```
+query GetPostById {
+  post(id: 1) {
+    id
+    title
+    content
+    author {
+      id
+      name
+    }
+    authorId
+  }
+}
+```
+
+![image](https://github.com/luiscoco/GraphQL_dotNet8_sample1/assets/32194879/a1778582-e64b-4397-98a0-301f6a536dfe)
+
+Now we can add new Post with this request
+
+
+
+```
+mutation AddNewPost {
+  addPost(input: {
+    title: "The Benefits of GraphQL Subscriptions",
+    content: "GraphQL subscriptions allow clients to receive real-time updates from the server, which is great for dynamic content updates.",
+    authorId: 1
+  }) {
+    id
+    title
+    content
+    author {
+      id
+      name
+    }
+  }
+}
+```
+
+![image](https://github.com/luiscoco/GraphQL_dotNet8_sample1/assets/32194879/cd49bd23-de5d-448a-9ec7-ed44ccb1821b)
 
