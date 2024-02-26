@@ -1,10 +1,16 @@
 # My first sample with .NET8 GraphQL API
 
-See also this example: https://medium.com/@jaydeepvpatil225/graphql-introduction-and-product-application-using-net-core-bd37faf3c585
+The source code for this demo is places in this github repo: https://www.youtube.com/playlist?list=PL4cUxeGkcC9gUxtblNUahcsg0WLxmrK_y
+
+See also this example: 
+
+https://medium.com/@jaydeepvpatil225/graphql-introduction-and-product-application-using-net-core-bd37faf3c585
 
 See also this demo: https://github.com/Jaydeep-007/graphql_demo
 
-For more info about GraphQL see (youtube video list): https://www.youtube.com/playlist?list=PL4cUxeGkcC9gUxtblNUahcsg0WLxmrK_y
+For more info about GraphQL see (youtube video list): 
+
+https://www.youtube.com/playlist?list=PL4cUxeGkcC9gUxtblNUahcsg0WLxmrK_y
 
 GraphQL is a query language for APIs and a runtime for executing those queries by using a type system you define for your data
 
