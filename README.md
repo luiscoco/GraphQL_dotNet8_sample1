@@ -1,4 +1,4 @@
-# My first sample with .NET8 GraphQL
+# My first sample with .NET8 GraphQL API
 
 For more info about GraphQL see (youtube video):
 
@@ -8,7 +8,7 @@ Unlike REST, which uses a fixed set of endpoints to fetch data, GraphQL allows c
 
 This can lead to more efficient network requests and a better development experience
 
-## 1. Create a New .NET 8 Project in VSCode 
+## 1. Create a New .NET 8 project in VSCode 
 
 ```
 dotnet new web -o GraphQLDemo
